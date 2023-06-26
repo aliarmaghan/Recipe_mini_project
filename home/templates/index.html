@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block start %}
+        <h1 style="color:green">This template is rendering from django server </h1>
+        <hr>
+        <a href="/contact/">
+            Contact
+        </a>
+        |
+        <a href="/about/">
+            About
+        </a>
+        <hr>
+        <table class="table table-hover container">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Can Vote</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for people in peoples %}
+              <tr>
+                <th>{{forloop.counter}}</th>
+                <td>{{people.name}}</td>
+                <td>{{people.age}}</td>
+                <td {% if people.age <= 18  %} style="background:red" {% else %} style="background:green"{% endif %}>
+                    {% if people.age >= 18  %}
+                    👍
+                    {% else %}
+                    👎
+                    {% endif %}
+                    </td>
+              </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        <hr>
+         
+        <p>{{text | truncatechars:80}}</p>
+
+        <p>{% if 'cucumber' in vegetables %}
+            Yes Available
+            {% elif "Potato" in vegetables %}
+            Yes Available
+            {% else %}
+            Not Available
+            {% endif %}
+        </p>
+
+        <button type="button">click me</button>
+        <hr>
+        {% for people in peoples %}
+        {% if people.age < 14 %}
+        pri
+        <p style="color:#008080" >{{people.name}}</p>
+        {% endif %}
+        {% endfor %}
+
+        <script src="" async defer>
+
+        </script>
+        {% endblock start %}
