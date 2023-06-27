@@ -29,6 +29,7 @@ urlpatterns = [
 
    path('recipes/', recipes , name="recipes"),
    path('delete-recipe/<id>/', delete_recipe , name="delete_recipe"),
+   path('update-recipe/<id>/', update_recipe , name="update_recipe"),
 
 
    path('about/', about , name="about"),
