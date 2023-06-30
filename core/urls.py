@@ -30,6 +30,8 @@ urlpatterns = [
    path('recipes/', recipes , name="recipes"),
    path('delete-recipe/<id>/', delete_recipe , name="delete_recipe"),
    path('update-recipe/<id>/', update_recipe , name="update_recipe"),
+   path('login/', login_page , name="login"),
+   path('register/', register , name="register"),
 
 
    path('about/', about , name="about"),
