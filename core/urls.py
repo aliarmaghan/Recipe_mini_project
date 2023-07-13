@@ -23,7 +23,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
    
-   path('', home , name="home"),
+   path('home/', home , name="home"),
+   path('', login_page , name="home"),
+   
+
 
    path('success-page/', success_page , name="success_page"),
 
@@ -38,6 +41,9 @@ urlpatterns = [
    path('about/', about , name="about"),
 
    path('contact/', contact , name="contact"),
+
+
+   path('students/' , get_students, name='get_students'),
 
 
 
