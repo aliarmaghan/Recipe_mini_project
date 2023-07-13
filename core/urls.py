@@ -44,6 +44,7 @@ urlpatterns = [
 
 
    path('students/' , get_students, name='get_students'),
+   path('check-marks/<student_id>' , see_marks, name='see_marks'),
 
 
 

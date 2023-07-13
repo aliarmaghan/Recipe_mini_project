@@ -2,7 +2,7 @@
 {% block start %}
 
 
-<div class"=row justify-content-center mt-5 ">
+<div class="container mt-5 ">
     <form class="mb-4 mt-4 px-5">
         <div class="row">
             <div class="col-md-6">
@@ -29,7 +29,12 @@
         {% for student in queryset %}
           <tr>
             <th scope="row">{{forloop.counter}}</th>
-            <td>{{student.student_id}}</td>
+            <td>
+                {% comment %} <a href="/see_marks/{{student.student_id}}"> {{student.student_id}} </a> {% endcomment %}
+                <a href="{% url 'see_marks' student.student_id %}"> 
+                    {{student.student_id}} 
+                </a>
+            </td>
             <td>{{student.student_name}}</td>
             <td>{{student.department}}</td>
             <td>{{student.student_email}}</td>
@@ -43,8 +48,8 @@
     <nav aria-label="Page Navigation Exmaple">
         <ul class="pagination">
                 {% if queryset.has_previous %}
-                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></lli>
-                    <li class="page-item"><a class="page-link" href="?page={{ queryset.previous_page_number }}">previous</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a> </li>
+                    <li class="page-item"><a class="page-link" href="?page={{ queryset.previous_page_number }}">previous</a> </li>
                 {% endif %}
         
                 <span class="current">
